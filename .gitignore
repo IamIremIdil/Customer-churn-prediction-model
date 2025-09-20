@@ -1,0 +1,10 @@
+-# JetBrains IDE (PyCharm, IntelliJ)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Python virtual environment
+.venv/
+venv/
+env/
