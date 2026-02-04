@@ -1,4 +1,4 @@
-## 🚀 Getting Started: Telco customer churn analyis (ML project)
+## Getting Started: Telco customer churn analyis (ML project)
 ## Interactive Streamlit Web App
 
 ### Prerequisites
@@ -17,21 +17,25 @@ Install packages:
 ## Features
 
 ✨ Advanced visualizations with professional styling
+
 🧠 Multiple ML models (Logistic Regression + Random Forest)
+
 📊 Comprehensive model evaluation (ROC curves, feature importance)
+
 💡 Automated insights generation
+
 🎯 Business intelligence (contract analysis, payment method impact)
 
 
 **A complete dashboard with 4 pages:**
 
-📊 Dataset Overview: Key metrics, data quality checks
+Dataset Overview: Key metrics, data quality checks
 
-📈 Exploratory Analysis: Interactive charts and insights
+Exploratory Analysis: Interactive charts and insights
 
-🤖 ML Models: Model comparison and performance metrics
+ML Models: Model comparison and performance metrics
 
-🎯 Prediction Tool: Real-time churn prediction with recommendations
+Prediction Tool: Real-time churn prediction with recommendations
 
 **Interactive Elements:**
 
