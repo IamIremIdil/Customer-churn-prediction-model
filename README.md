@@ -7,10 +7,10 @@ Install packages:
 
 ### Installation
 
-1.  **save the code as churn_app.py**
+1.  **save the code as mainchurn.py**
 2. **run the app:**
     ```bash
-    streamlit run churn_app.py
+    streamlit run mainchurn.py
     ``` 
 3.  **Open your browser to http://localhost:8501**
 
