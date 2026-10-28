@@ -45,3 +45,7 @@ config.json
 .idea/
 *.swp
 *.swo
+
+data/
+artifacts/*.joblib
+.streamlit/secrets.toml

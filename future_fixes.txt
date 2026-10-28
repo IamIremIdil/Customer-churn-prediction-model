@@ -1,0 +1,17 @@
+Edge cases in the prediction tool: TotalCharges can be inconsistent with tenure × MonthlyCharges in the inputs, and the hard-coded risk-factor text isn’t derived from the model. Label it as heuristic,
+or the “Risk Factors” section may contradict the model’s output.
+
+“Retrains every time” is overstated. @st.cache_data means training runs once per server process, not on every interaction. The real problems are the slow cold start and that cache_data is the wrong decorator for model objects. It copies them on each call, and cache_resource is the right one.
+The Dockerfile and health check it mentions aren’t in your project files, so the “keep your existing Dockerfile” advice assumes something I can’t see.
+Data leakage is a valid general point, but it’s mild here. Your scaler is already fit on the train split only. The only leak is the median TotalCharges fill on the full dataset, which is tiny, and a pipeline imputer would fix it.
+Dataset size: the point is correct. Telco has about 7,000 rows and the CSV is under 1 MB, so the “large dataset” concern is mostly moot. Just don’t bake the kagglehub cache into the image.
+The threshold widget pasted into the text is garbled. The table labels are scrambled and there’s stray Turkish UI text. The math itself is right: precision 3/6 = 50%, recall 3/5 = 60%.
+
+note:
+
+Don’t just use the latest for everything. The code has two compatibility risks:
+
+pandas 3.x breaks this line: df['TotalCharges'].fillna(..., inplace=True). Pandas 3 uses Copy-on-Write, so this chained in-place call no longer modifies df. The NaNs stay, and Logistic Regression then crashes on them. The fix that works on any version is:
+python
+   df['TotalCharges'] = df['TotalCharges'].fillna(df['TotalCharges'].median())
+use_container_width=True is deprecated in recent Streamlit in favor of width="stretch". It may still work with a warning, so check how 1.66 behaves.

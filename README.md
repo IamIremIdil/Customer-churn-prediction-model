@@ -10,7 +10,7 @@ Install packages:
 1.  **save the code as mainchurn.py**
 2. **run the app:**
     ```bash
-    streamlit run mainchurn.py
+    streamlit run src/mainchurn.py
     ``` 
 3.  **Open your browser to http://localhost:8501**
 
